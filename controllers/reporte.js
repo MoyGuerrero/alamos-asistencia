@@ -40,8 +40,8 @@ const getReporteAsistencia = async (req, res = response) => {
 
     const libroExcel = new exceljs.Workbook();
 
-    let inicioColumnaNombre = 8;
-    const pathFile = path.resolve(__dirname,'../report/reporte_asistencia.xlsx');
+    let inicioColumnaNombre = 9;
+    const pathFile = path.resolve(__dirname,'../report/reporte_asistencia_v2.xlsx');
 
     // await libroExcel.xlsx.readFile("C:/reporte_asistencia/reporte_asistencia.xlsx");
     await libroExcel.xlsx.readFile(pathFile);
@@ -62,60 +62,23 @@ const getReporteAsistencia = async (req, res = response) => {
         nombreCell.font = { 
             size: 14, 
             bold: true,
-            color: { argb: 'FFFFFFFF' }
-        };
-        nombreCell.fill = {
-            type: 'pattern',
-            pattern: 'solid',
-            fgColor: { argb: 'FF0070C0' }
+            color: { argb: '000000' }
         };
         
-        inicioColumnaNombre++;
-        
-        // Añadir fila de encabezados
-        sheet.getCell(`B${inicioColumnaNombre}`).value = "Fecha";
-        sheet.getCell(`C${inicioColumnaNombre}`).value = "Entrada";
-        sheet.getCell(`D${inicioColumnaNombre}`).value = "Salida";
-        sheet.getCell(`E${inicioColumnaNombre}`).value = "Extra";
-        
-        // Formatear encabezados
-        ['B', 'C', 'D', 'E'].forEach(col => {
-            const headerCell = sheet.getCell(`${col}${inicioColumnaNombre}`);
-            headerCell.font = {
-                bold: true,
-                color: { argb: 'FF000000' }
-            };
-            headerCell.fill = {
-                type: 'pattern',
-                pattern: 'solid',
-                fgColor: { argb: 'FFD9D9D9' } // Gris claro
-            };
-            headerCell.alignment = {
-                horizontal: "center"
-            };
-        });
-        
-        inicioColumnaNombre++;
+        // inicioColumnaNombre++;
         
         // Escribir asistencias
         for (let j = 0; j < formatoExcel[i].asistencias.length; j++) {
-            sheet.getCell(`B${inicioColumnaNombre}`).value = formatoExcel[i].asistencias[j].fecha;
-            sheet.getCell(`C${inicioColumnaNombre}`).value = formatoExcel[i].asistencias[j].entrada;
-            sheet.getCell(`D${inicioColumnaNombre}`).value = formatoExcel[i].asistencias[j].salida;
-            sheet.getCell(`E${inicioColumnaNombre}`).value = formatoExcel[i].asistencias[j].extra;
+            sheet.getCell(`F${inicioColumnaNombre}`).value = formatoExcel[i].asistencias[j].fecha;
+            sheet.getCell(`G${inicioColumnaNombre}`).value = formatoExcel[i].asistencias[j].entrada;
+            sheet.getCell(`H${inicioColumnaNombre}`).value = formatoExcel[i].asistencias[j].salida;
+            sheet.getCell(`I${inicioColumnaNombre}`).value = formatoExcel[i].asistencias[j].extra;
             inicioColumnaNombre++;
         }
         
         // Opcional: espacio entre empleados
-        inicioColumnaNombre++;
+        // inicioColumnaNombre++;
     }
-
-    sheet.columns = [
-        { key: 'B', width: 18 },  // Fecha
-        { key: 'C', width: 18 },  // Entrada
-        { key: 'D', width: 18 },  // Salida
-        { key: 'E', width: 20 }   // Extra
-    ];
 
     const now = new Date();
     const fechaFormateada = now.toISOString().split("T")[0];
