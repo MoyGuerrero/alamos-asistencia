@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 800px;
+        height: 1000px;
+        margin: auto;
+        gap: 4px;
+      }
+
+      .cuadro {
+        position: relative;
+        border: 1px solid black;
+        /* max-height: 1000px; */
+        overflow: hidden;
+      }
+      .logo {
+        position: absolute;
+        top: 5px;
+        left: 0px;
+        width: 100px;
+        height: 100px;
+        margin-left: 2px;
+        /* background-image: url("/images/LosAlamos-logo1-azul.jpg");background-position: center;background-size: cover;background-repeat: no-repeat; */
+        /* background-image: url("../images/LosAlamos-logo1-azul.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat; */
+        transform: rotate(-90deg);
+      }
+
+      .texto1 {
+        position: absolute;
+        height: 100%;
+        width: 40px;
+        left: 65px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        margin-right: 10px;
+      }
+
+      .texto2 {
+        position: absolute;
+        height: 100%;
+        width: 40px;
+        left: 90px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        margin-right: 10px;
+      }
+
+      .rotate-90 {
+        transform: rotate(180deg);
+        display: flex;
+        gap: 5px;
+        writing-mode: vertical-lr;
+      }
+      .title {
+        font-weight: bold;
+      }
+      .subtitle {
+        font-weight: 500;
+        font-size: 15px;
+      }
+
+      .tabla {
+        position: absolute;
+        width: 80px;
+        height: 100%;
+        left: 173px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .table {
+        border-collapse: collapse;
+        height: 100%;
+        writing-mode: vertical-rl;
+        transform: rotate(-180deg);
+        margin: 0px;
+        /* transform: rotate(-90deg); */
+      }
+      .table thead tr {
+        padding: 12px 0px;
+        text-align: center;
+        background-color: #204182;
+        color: white;
+      }
+
+      .table tbody tr {
+        padding: 12px 0px;
+        text-align: center;
+      }
+
+      .firma {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        left: 330px;
+        height: 100%;
+        align-items: end;
+        margin-top: 40px;
+      }
+      .line {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        left: 330px;
+        height: 55%;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      {{__DATA__REGISTROS}}
+      <!-- <div class="cuadro">
+        <div class="logo"></div>
+        <div class="texto1">
+          <div class="rotate-90">
+            <label class="title">Fechas:</label>
+            <span class="subtitle">2025-04-24 al 2025-04-30</span>
+          </div>
+          <div class="rotate-90">
+            <label class="title">Nombre</label>
+            <span class="subtitle">Moises Guerrero</span>
+          </div>
+        </div>
+        <div class="texto2">
+          <div class="rotate-90">
+            <label class="title">Direccion:</label>
+            <span class="subtitle"> Calle 1a. Ote. 306, Oriente 1</span>
+          </div>
+          <div class="rotate-90">
+            <label class="title">Sucursal</label>
+            <span class="subtitle">Delicias,Chihuahua</span>
+          </div>
+        </div>
+
+        <div class="tabla">
+          <table class="table">
+            <thead>
+              <tr>
+                <td>Fecha</td>
+                <td>Entrada</td>
+                <td>Salida</td>
+                <td>Extra</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2025-04-24</td>
+                <td>07:50</td>
+                <td>17:55</td>
+                <td>Sin Registro</td>
+              </tr>
+              <tr>
+                <td>2025-04-24</td>
+                <td>07:50</td>
+                <td>17:55</td>
+                <td>Sin Registro</td>
+              </tr>
+              <tr>
+                <td>2025-04-24</td>
+                <td>07:50</td>
+                <td>17:55</td>
+                <td>Sin Registro</td>
+              </tr>
+              <tr>
+                <td>2025-04-24</td>
+                <td>07:50</td>
+                <td>17:55</td>
+                <td>Sin Registro</td>
+              </tr>
+              <tr>
+                <td>2025-04-24</td>
+                <td>07:50</td>
+                <td>17:55</td>
+                <td>Sin Registro</td>
+              </tr>
+              <tr>
+                <td>2025-04-24</td>
+                <td>07:50</td>
+                <td>17:55</td>
+                <td>Sin Registro</td>
+              </tr>
+              <tr>
+                <td>2025-04-24</td>
+                <td>07:50</td>
+                <td>17:55</td>
+                <td>Sin Registro</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="line">
+            <hr style="height: 100%;">
+        </div>
+
+        <div class="firma">
+            <span class="rotate-90">Moises Guerrero</span>
+        </div>
+      </div> -->
+    </div>
+  </body>
+</html>

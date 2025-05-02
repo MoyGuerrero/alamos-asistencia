@@ -7,8 +7,8 @@ const router = Router();
 
 router.get("/:desde/:hasta",
     [
-        check("desde").isISO8601().withMessage('Formato de fecha inválido. Use YYYY-MM-DD').toDate().customSanitizer(value => value.toISOString().split('T')[0]),
-        check("hasta").isISO8601().withMessage('Formato de fecha inválido. Use YYYY-MM-DD').toDate().customSanitizer(value => value.toISOString().split('T')[0]),
+        check("desde").isISO8601().withMessage('Formato de fecha inválido. Use YYYY-MM-DD').toDate(),
+        check("hasta").isISO8601().withMessage('Formato de fecha inválido. Use YYYY-MM-DD').toDate(),
         validar_campos
     ], getReporteAsistencia);
 
