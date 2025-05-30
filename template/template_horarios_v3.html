@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+    <style>
+      body {
+        margin: 2px;
+        padding: 0px;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 27px;
+        width: 100%;
+      }
+      .cuadro {
+        border: 1px solid black;
+        width: 80%;
+        height: 350px;
+      }
+
+      .logo {
+        display: flex;
+        justify-content: end;
+        margin-right: 10px;
+        width: 100%;
+        height: 55px;
+      }
+      .texto {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 15px;
+        margin: 10px 0px;
+      }
+
+      .texto > label {
+        font-weight: bold;
+        font-size: 12px;
+        /* text-decoration: underline; */
+      }
+
+      .texto label span {
+        font-weight: 500;
+        text-transform: capitalize;
+        /* text-decoration: none!important; */
+      }
+      .table {
+        border-collapse: collapse;
+        width: 100%;
+        /* border-bottom: 0.5px solid black ; */
+      }
+      .table thead tr {
+        padding: 12px 0px;
+        text-align: center;
+        background-color: #204182;
+        color: white;
+      }
+
+      .table tbody tr {
+        padding: 12px 0px;
+        text-align: center;
+      }
+      .p-4{
+        padding: 0px 8px;
+      }
+
+      .text-end{
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        justify-content: center;
+        margin-top: 20px;
+        margin-right: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      {{__DATA__REGISTROS}}
+      <!-- <div class="cuadro">
+        <div class="logo">
+          <img src="/images/LosAlamos-logo1-azul.jpg" alt="logo" />
+        </div>
+
+        <div class="texto">
+          <label>Nombre: <span>Moises</span></label>
+          <label>Fechas: <span>2025-05-01 al 2025-05-06</span></label>
+        </div>
+        <div class="texto">
+          <label>Sucursal: <span>Delicias,Chihuahua</span></label>
+          <label
+            >Direccion:
+            <span>Calle 1a Oriente #306 Col. Centro. C.P. 33000</span></label
+          >
+        </div>
+
+        <div class="p-4">
+          <table class="table">
+            <thead>
+              <tr>
+                <td>Fecha</td>
+                <td>Entrada</td>
+                <td>Salida</td>
+                <td>Extra</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2025-04-24</td>
+                <td>07:50</td>
+                <td>17:55</td>
+                <td>Sin Registro</td>
+              </tr>
+              <tr>
+                <td>2025-04-24</td>
+                <td>07:50</td>
+                <td>17:55</td>
+                <td>Sin Registro</td>
+              </tr>
+              <tr>
+                <td>2025-04-24</td>
+                <td>07:50</td>
+                <td>17:55</td>
+                <td>Sin Registro</td>
+              </tr>
+              <tr>
+                <td>2025-04-24</td>
+                <td>07:50</td>
+                <td>17:55</td>
+                <td>Sin Registro</td>
+              </tr>
+              <tr>
+                <td>2025-04-24</td>
+                <td>07:50</td>
+                <td>17:55</td>
+                <td>Sin Registro</td>
+              </tr>
+              <tr>
+                <td>2025-04-24</td>
+                <td>07:50</td>
+                <td>17:55</td>
+                <td>Sin Registro</td>
+              </tr>
+              <tr>
+                <td>2025-04-24</td>
+                <td>07:50</td>
+                <td>17:55</td>
+                <td>Sin Registro</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="text-end">
+          <label>_______________________</label>
+          Moises Guerrero Vazquez
+        </div>
+      </div> -->
+      <!-- <div class="cuadro"></div>
+      <div class="cuadro"></div> -->
+    </div>
+  </body>
+</html>

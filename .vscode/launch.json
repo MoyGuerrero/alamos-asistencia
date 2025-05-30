@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Express Server",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "--inspect",
+        "--trace-warnings"  // Mejora: Muestra stack traces de warnings
+      ],
+      "skipFiles": [
+        "<node_internals>/**",
+        "**/node_modules/**"  // Mejora: Excluye node_modules
+      ],
+      "program": "${workspaceFolder}/model/server.js",
+      "console": "integratedTerminal",
+      "outFiles": ["${workspaceFolder}/**/*.js"],
+      "env": {
+        "NODE_ENV": "development",
+        "DEBUG": "express:*,app:*",  // Mejora: Incluye logs de Express
+        "PORT": "3001"  // Mejora: Define el puerto
+      },
+      "sourceMaps": true,  // Mejora: Útil si usas TypeScript/Babel
+      "autoAttachChildProcesses": true  // Mejora: Depura procesos hijos
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 3px 0;
+            /* padding: 20px; */
+            background-color: #f5f5f5;
+        }
+        .pagina {
+            background-color: white;
+            width: 210mm; /* A4 */
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 15mm;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            page-break-after: always; /* Forzar salto de página al imprimir */
+        }
+        .tarjeta {
+            border: 2px solid #333;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            break-inside: avoid; /* Evitar que se parta en páginas */
+        }
+
+        .texto {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 15px;
+        margin: 10px 0px;
+      }
+
+      .texto > label {
+        font-weight: bold;
+        font-size: 12px;
+        /* text-decoration: underline; */
+      }
+
+      .texto label span {
+        font-weight: 500;
+        text-transform: capitalize;
+        /* text-decoration: none!important; */
+      }
+      .table {
+        border-collapse: collapse;
+        width: 100%;
+        /* border-bottom: 0.5px solid black ; */
+      }
+      .table thead tr {
+        /* padding: 12px 0px; */
+        text-align: center;
+        background-color: #204182;
+        color: white;
+      }
+
+      .table tbody tr {
+        /* padding: 12px 0px; */
+        text-align: center;
+        font-size: 8px;
+      }
+      .logo {
+        text-align: end;
+        margin-bottom: 20px;
+    }
+        @media print {
+            body {
+                background-color: transparent;
+            }
+            .pagina {
+                box-shadow: none;
+                margin: 0;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="pagina">
+        
+        <!-- Tarjeta 1 -->
+        <!-- <div class="tarjeta">
+            <div class="logo">
+                <img src="/images/LosAlamos-logo1-azul.jpg" alt="Logo" width="150">
+            </div>
+            <div class="texto">
+                <label>Nombre: <span>Moises</span></label>
+                <label>Fechas: <span>2025-05-01 al 2025-05-06</span></label>
+            </div>
+
+            <div class="texto">
+                <label>Sucursal: <span>Delicias,Chihuahua</span></label>
+                <label
+                  >Direccion:
+                  <span>Calle 1a Oriente #306 Col. Centro. C.P. 33000</span></label
+                >
+              </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Entrada</th>
+                        <th>Salida Comida</th>
+                        <th>Entrada Comida</th>
+                        <th>Salida</th>
+                        <th>Extra</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2023-11-01</td>
+                        <td>08:00</td>
+                        <td>13:00</td>
+                        <td>14:00</td>
+                        <td>17:00</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+            <footer style="display: flex; justify-content: center; align-items: center; margin-top: 50px;">
+                <div style="display: flex; flex-direction: column; justify-content: center;">
+                    <hr style="width: 250px;">
+                    <span style="text-align: center;">Nombre empleado</span>
+                </div>
+            </footer>
+        </div> -->
+        {{__DATA__REGISTROS}}
+    </div>
+</body>
+</html>
